@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnlk60ee03kj1"]
+
+[ext_resource type="PackedScene" uid="uid://c1mcvhne8ikgy" path="res://Scenes/Components/HealthComponent.tscn" id="1_wdo56"]
+[ext_resource type="PackedScene" uid="uid://sn63rjd17uqg" path="res://Scenes/Components/HitBoxComponent.tscn" id="2_jv2yd"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="3_ar1vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scs4b"]
+size = Vector2(40, 40)
+
+[node name="Enemy" type="Node2D"]
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_wdo56")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HitBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_jv2yd")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_scs4b")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -24.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "AB"
+script = ExtResource("3_ar1vr")
