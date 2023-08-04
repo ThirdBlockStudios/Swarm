@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var movement_speed = 125
+@export var speed_factor_increase = 2
 func _process(delta: float):
-	
-
+	#ad stamina to the sprint
 	var direction = Vector2.ZERO
 	var speed_factor = 1
 	if Input.is_action_pressed("ui_left"):
@@ -15,7 +15,8 @@ func _process(delta: float):
 	if Input.is_action_pressed("ui_up"):
 		direction += Vector2.UP
 	if Input.is_action_pressed("shift"):
-		speed_factor = 2
+		speed_factor = speed_factor_increase
+		
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
