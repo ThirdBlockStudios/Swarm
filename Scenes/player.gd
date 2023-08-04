@@ -21,3 +21,16 @@ func _process(delta: float):
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		position += direction * movement_speed * speed_factor * delta
+
+func _input(event: InputEvent):
+	if Input.is_action_just_pressed("attack"):
+		$AnimatedSprite2D.play("Attack")
+		var attack = Attack.new()
+		attack.attack_damage = 10
+		$AttackComponent.deal_damage(attack)
+	
+	
+
+
+func _on_animated_sprite_2d_animation_finished():
+	$AnimatedSprite2D.play("Static")
