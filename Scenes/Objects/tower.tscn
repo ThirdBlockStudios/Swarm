@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dwflvjesk87us"]
+[gd_scene load_steps=2 format=3 uid="uid://dwflvjesk87us"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/tower.gd" id="1_2obbl"]
 
 [node name="Tower" type="Node2D"]
+script = ExtResource("1_2obbl")

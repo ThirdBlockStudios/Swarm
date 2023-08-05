@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://doooxkwvq3xx0"]
+[gd_scene load_steps=5 format=3 uid="uid://doooxkwvq3xx0"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/player_base.gd" id="1_a1pkj"]
+[ext_resource type="TileSet" uid="uid://chwja2elk0k4e" path="res://Assets/main_tile_set.tres" id="2_0dn5x"]
+[ext_resource type="PackedScene" uid="uid://c1mcvhne8ikgy" path="res://Scenes/Components/HealthComponent.tscn" id="2_i3ugl"]
+[ext_resource type="PackedScene" uid="uid://sn63rjd17uqg" path="res://Scenes/Components/HitBoxComponent.tscn" id="3_dgx5n"]
 
 [node name="PlayerBase" type="Node2D"]
+script = ExtResource("1_a1pkj")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_i3ugl")]
+MAX_HEALTH = 10000.0
+
+[node name="HitBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_dgx5n")]
+health_component = NodePath("../HealthComponent")
+team = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBoxComponent"]
+polygon = PackedVector2Array(60, 0, 60, -70, 0, -105, -60, -70, -60, 0, 0, 35)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_0dn5x")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 458752, 6)
