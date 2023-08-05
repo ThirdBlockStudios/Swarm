@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnlk60ee03kj1"]
+[gd_scene load_steps=7 format=3 uid="uid://cnlk60ee03kj1"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/enemy.gd" id="1_a8ycw"]
 [ext_resource type="PackedScene" uid="uid://c1mcvhne8ikgy" path="res://Scenes/Components/HealthComponent.tscn" id="1_sgpas"]
 [ext_resource type="PackedScene" uid="uid://sn63rjd17uqg" path="res://Scenes/Components/HitBoxComponent.tscn" id="2_hxdvg"]
+[ext_resource type="PackedScene" uid="uid://cl08otwvbtwqu" path="res://Scenes/States/state_machine.tscn" id="4_0bc8i"]
+[ext_resource type="Script" path="res://Scenes/States/EnemyIdle.gd" id="5_58k7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scs4b"]
 size = Vector2(40, 40)
@@ -28,3 +30,10 @@ offset_top = -24.0
 offset_right = 40.0
 offset_bottom = -1.0
 text = "AB"
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("4_0bc8i")]
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_58k7x")
+enemy = NodePath("../..")
