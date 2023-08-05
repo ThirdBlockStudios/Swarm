@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Objects/world.gd" id="1_5n5n4"]
 [ext_resource type="PackedScene" uid="uid://cnlk60ee03kj1" path="res://Scenes/Objects/enemy.tscn" id="1_p227b"]
 [ext_resource type="PackedScene" uid="uid://1bcwv34xrlop" path="res://Scenes/Objects/player.tscn" id="2_51bbs"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://kemc7tqs8qlx" path="res://Assets/hexagonAll_sheet.png" id="4_hgak4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssqov"]
@@ -183,6 +184,11 @@ texture_region_size = Vector2i(120, 140)
 tile_shape = 3
 tile_size = Vector2i(120, 140)
 sources/2 = SubResource("TileSetAtlasSource_ssqov")
+=======
+[ext_resource type="TileSet" uid="uid://duxdey6h6iq10" path="res://Assets/main_tile_set.tres" id="3_b3bma"]
+[ext_resource type="PackedScene" uid="uid://dseurp7usev7p" path="res://Scenes/Objects/enemy_base.tscn" id="4_ldamx"]
+[ext_resource type="PackedScene" uid="uid://doooxkwvq3xx0" path="res://Scenes/Objects/player_base.tscn" id="4_vy8rp"]
+>>>>>>> Stashed changes
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5n5n4")

@@ -1,6 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://dseurp7usev7p"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/enemy_base.gd" id="1_sqwyw"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://cnlk60ee03kj1" path="res://Scenes/Objects/enemy.tscn" id="2_ogu7h"]
+[ext_resource type="TileSet" uid="uid://duxdey6h6iq10" path="res://Assets/main_tile_set.tres" id="3_7yopq"]
+[ext_resource type="PackedScene" uid="uid://sn63rjd17uqg" path="res://Scenes/Components/HitBoxComponent.tscn" id="4_c77q5"]
+[ext_resource type="PackedScene" uid="uid://c1mcvhne8ikgy" path="res://Scenes/Components/HealthComponent.tscn" id="5_pagya"]
+>>>>>>> Stashed changes
 
 [node name="EnemyBase" type="Node2D"]
 script = ExtResource("1_sqwyw")

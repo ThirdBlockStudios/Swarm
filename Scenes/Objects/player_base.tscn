@@ -1,6 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://doooxkwvq3xx0"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/player_base.gd" id="1_a1pkj"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="TileSet" uid="uid://duxdey6h6iq10" path="res://Assets/main_tile_set.tres" id="2_0dn5x"]
+[ext_resource type="PackedScene" uid="uid://c1mcvhne8ikgy" path="res://Scenes/Components/HealthComponent.tscn" id="2_i3ugl"]
+[ext_resource type="PackedScene" uid="uid://sn63rjd17uqg" path="res://Scenes/Components/HitBoxComponent.tscn" id="3_dgx5n"]
+>>>>>>> Stashed changes
 
 [node name="PlayerBase" type="Node2D"]
 script = ExtResource("1_a1pkj")
