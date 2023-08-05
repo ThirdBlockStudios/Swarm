@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b430qdm485lq6"]
+[gd_scene load_steps=3 format=3 uid="uid://b4hj5nrayyejh"]
 
-[ext_resource type="PackedScene" uid="uid://dviiwyo761dgx" path="res://Scenes/player.tscn" id="1_l0nm2"]
-[ext_resource type="PackedScene" uid="uid://cnlk60ee03kj1" path="res://Scenes/enemy.tscn" id="2_7muqh"]
+[ext_resource type="PackedScene" uid="uid://cnlk60ee03kj1" path="res://Scenes/Objects/enemy.tscn" id="1_p227b"]
+[ext_resource type="PackedScene" uid="uid://1bcwv34xrlop" path="res://Scenes/Objects/player.tscn" id="2_51bbs"]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_l0nm2")]
+[node name="Enemy" parent="." instance=ExtResource("1_p227b")]
 
-[node name="Enemy" parent="." instance=ExtResource("2_7muqh")]
+[node name="Player" parent="." instance=ExtResource("2_51bbs")]
