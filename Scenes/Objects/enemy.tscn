@@ -25,12 +25,6 @@ health_component = NodePath("../HealthComponent")
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_scs4b")
 
-[node name="HealthLabel" type="Label" parent="."]
-offset_top = -24.0
-offset_right = 40.0
-offset_bottom = -1.0
-text = "AB"
-
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("4_0bc8i")]
 initial_state = NodePath("EnemyIdle")
 
