@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://chwja2elk0k4e"]
 
-[ext_resource type="Texture2D" uid="uid://kemc7tqs8qlx" path="res://Assets/hexagonAll_sheet.png" id="1_kokh5"]
+[ext_resource type="Texture2D" uid="uid://kemc7tqs8qlx" path="res://Assets/main_tile_set_sprite_sheet.png" id="1_c3iwi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t5i2"]
 resource_name = "main_tile_set"
-texture = ExtResource("1_kokh5")
+texture = ExtResource("1_c3iwi")
 separation = Vector2i(2, 2)
 texture_region_size = Vector2i(120, 140)
 0:0/0 = 0
