@@ -8,7 +8,8 @@ https://youtu.be/74y6zWZfQKk
 
 3. State machine design for object behavior:
 https://youtu.be/ow_Lum-Agbs
+https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/
 
-4. A more efficient method for character animation...skeletons.
+5. A more efficient method for character animation...skeletons.
 https://youtu.be/sq6mnix8eAg
 https://docs.godotengine.org/en/stable/tutorials/animation/2d_skeletons.html
