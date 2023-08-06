@@ -26,7 +26,7 @@ func _process(delta: float):
 
 
 func _input(event: InputEvent):
-    if Input.is_action_just_pressed("attack"):
+    if event.is_action_pressed("attack"):
         $AnimatedSprite2D.play("Attack")
         var attack = Attack.new()
         attack.attack_damage = 10
