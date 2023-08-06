@@ -47,7 +47,7 @@ func _input(event: InputEvent):
             offset -= event.relative / zoom
 
 
-func zoom_camera(zoom_factor, mouse_position):
-    var viewport_size = get_viewport().size
-    var previous_zoom = zoom
+func zoom_camera(zoom_factor, _mouse_position):
+#    var viewport_size = get_viewport().size
+#    var previous_zoom = zoom
     zoom += zoom * zoom_factor
