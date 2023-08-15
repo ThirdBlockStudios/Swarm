@@ -1,6 +1,9 @@
 class_name Player
 extends Node2D
 
+# Signal emitted when the player dies.
+signal killed
+
 @export var movement_speed = 125
 @export var speed_factor_increase = 2
 
@@ -26,6 +29,9 @@ func _process(delta: float):
 
 
 func _input(event: InputEvent):
+    # TODO(nkuang): Testing only. Remove after enemy damage implemented.
+    if Input.is_action_pressed("kill_player_test"):
+        die()
     if event.is_action_pressed("attack"):
         $AnimatedSprite2D.play("Attack")
         var attack = Attack.new()
@@ -35,3 +41,9 @@ func _input(event: InputEvent):
 
 func _on_animated_sprite_2d_animation_finished():
     $AnimatedSprite2D.play("Static")
+
+
+## Player dying logic.
+func die():
+    killed.emit()
+    queue_free()
