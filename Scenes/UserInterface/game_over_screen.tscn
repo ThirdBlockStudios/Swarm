@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd3war74h11ym"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ky8kgjefp42"]
 
-[ext_resource type="Script" path="res://Scenes/UserInterface/game_over.gd" id="1_x4wl5"]
+[ext_resource type="Script" path="res://Scenes/UserInterface/game_over_screen.gd" id="1_32bko"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d45nn"]
 bg_color = Color(0.470588, 0.337255, 0.192157, 1)
@@ -15,14 +15,14 @@ font_size = 55
 [sub_resource type="LabelSettings" id="LabelSettings_wtnfm"]
 font_size = 45
 
-[node name="GameOver" type="Control"]
+[node name="GameOverScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x4wl5")
+script = ExtResource("1_32bko")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
