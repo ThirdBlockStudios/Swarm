@@ -12,7 +12,7 @@ func _ready():
     # Hook up Player's killed signal.
     player = get_tree().get_first_node_in_group("player")
     assert(player != null)
-    player.killed.connect(display_game_over_screen)
+    player.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
     # TODO(nkuang): hook up EnemyBase's/PlayerBase's killed signal.
 
 

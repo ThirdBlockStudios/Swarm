@@ -31,7 +31,10 @@ func _process(delta: float):
 func _input(event: InputEvent):
     # TODO(nkuang): Testing only. Remove after enemy damage implemented.
     if Input.is_action_pressed("kill_player_test"):
-        die()
+        # Simulate 1HKO on Player.
+        var attack = Attack.new()
+        attack.attack_damage = 50
+        $HealthComponent.damage(attack)
     if event.is_action_pressed("attack"):
         $AnimatedSprite2D.play("Attack")
         var attack = Attack.new()
@@ -41,9 +44,3 @@ func _input(event: InputEvent):
 
 func _on_animated_sprite_2d_animation_finished():
     $AnimatedSprite2D.play("Static")
-
-
-## Player dying logic.
-func die():
-    killed.emit()
-    queue_free()
