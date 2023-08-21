@@ -1,9 +1,6 @@
 class_name Player
 extends Node2D
 
-# Signal emitted when the player dies.
-signal killed
-
 @export var movement_speed = 125
 @export var speed_factor_increase = 2
 

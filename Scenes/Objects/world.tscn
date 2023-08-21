@@ -28,5 +28,5 @@ position = Vector2(-540, 315)
 
 [node name="PlayerBase" parent="." instance=ExtResource("4_vy8rp")]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_51bbs")]
+[node name="Player" parent="." instance=ExtResource("2_51bbs")]
 z_index = 10

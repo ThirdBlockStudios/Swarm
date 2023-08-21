@@ -13,6 +13,7 @@ func _ready():
     playerBase = $PlayerBase
     enemyBase = $EnemyBase
     # Hook up signals for when health reaches 0.
+    # TODO(nkuang): Change GameOverScreen to Victory/Defeat Screens.
     player.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
     playerBase.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
     enemyBase.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
