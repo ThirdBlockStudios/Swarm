@@ -1,19 +1,21 @@
 class_name World
 extends Node2D
 
-# TODO(nkuang): World should keep track of all objects that can emit a game-over
-# signal i.e. Player/EnemyBases
-var player = null
+var player: Player
+var enemyBase: EnemyBase
+var playerBase: PlayerBase
 
 @onready var ui_manager = $UIManager
 
 
 func _ready():
-    # Hook up Player's killed signal.
-    player = get_tree().get_first_node_in_group("player")
-    assert(player != null)
+    player = $Player
+    playerBase = $PlayerBase
+    enemyBase = $EnemyBase
+    # Hook up signals for when health reaches 0.
     player.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
-    # TODO(nkuang): hook up EnemyBase's/PlayerBase's killed signal.
+    playerBase.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
+    enemyBase.get_node("HealthComponent").health_depleted.connect(display_game_over_screen)
 
 
 func _input(event: InputEvent):
