@@ -1,7 +1,7 @@
 class_name Player
 extends Node2D
 
-@export var movement_speed = 125
+@export var movement_speed = 500
 @export var speed_factor_increase = 2
 
 
