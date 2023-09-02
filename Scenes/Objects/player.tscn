@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1bcwv34xrlop"]
+[gd_scene load_steps=19 format=3 uid="uid://dbbmy7551jha3"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/player.gd" id="1_2gj7s"]
 [ext_resource type="PackedScene" uid="uid://cmshjaohv6n26" path="res://Scenes/Components/AttackComponent.tscn" id="2_x4kpu"]
@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dwbk76g3f6s44" path="res://Assets/RingFrame6.png" id="11_qxhk8"]
 [ext_resource type="Texture2D" uid="uid://b81mxcvvdeaql" path="res://Assets/Character.png" id="22_vhbag"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s3bbg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohfpt"]
 radius = 2000.1
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rae78"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfams"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -66,7 +66,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8fg2"]
 radius = 35.0143
 
-[node name="Player" type="Node2D" groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctecf"]
+radius = 29.0172
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2gj7s")
 
 [node name="AttackComponent" parent="." node_paths=PackedStringArray("attack_range") instance=ExtResource("2_x4kpu")]
@@ -75,22 +78,26 @@ attack_range = NodePath("CollisionShape2D")
 ignore_teams = Array[int]([1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
-shape = SubResource("CircleShape2D_s3bbg")
+shape = SubResource("CircleShape2D_ohfpt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-sprite_frames = SubResource("SpriteFrames_rae78")
+sprite_frames = SubResource("SpriteFrames_wfams")
 animation = &"Static"
 
 [node name="HealthComponent" parent="." instance=ExtResource("7_28yue")]
 
-[node name="HitBoxComponent" parent="." instance=ExtResource("8_dt8ef")]
+[node name="CameraComponent" parent="." instance=ExtResource("9_6oofb")]
+pannable = false
+
+[node name="HitBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_dt8ef")]
+health_component = NodePath("../HealthComponent")
 team = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
 shape = SubResource("CircleShape2D_h8fg2")
 
-[node name="CameraComponent" parent="." instance=ExtResource("9_6oofb")]
-pannable = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ctecf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
