@@ -37,9 +37,6 @@ func generate_world():
         for y in MAP_SIZE.y:
             # MAP_SIZE / 2 to center the map relative to origin (0, 0).
             var coordinates = Vector2i(spawn.x - MAP_SIZE.x / 2 + x, spawn.y - MAP_SIZE.y / 2 + y)
-            # TODO(nkuang): Atlas needs to also be set up for procedural generation i.e. grass
-            # tiles with grass, mountains with mountain, exclude tower tiles.
-
             # The noise generator returns a value from [-1, 1]. Assuming the
             # tile atlas is square (N x N), we multiple the noise value by N to
             # span the entire atlas since the noise value maps to a specific
@@ -48,12 +45,7 @@ func generate_world():
             # Note that most noise functions don't produce values close to the extrema.
 #            var noise_value = (noise_generator.get_noise_2dv(coordinates)) * (ATLAS_SIZE.x / 2)
             var noise_value = (noise_generator.get_noise_2dv(coordinates)) / 2 + 0.5
-            # Atlas mapping requires positive, integer coordinates.
-#            print(noise_value)
-            # int(noise_value * 100) % 2
-            var atlas_x = 0 if (noise_value < 0.58) else 1
-#            print(noise_value)
-#            var atlas_y = abs(round(noise_value + (ATLAS_SIZE.x / 2)))
+            var atlas_x = 0 if (noise_value < 0.6) else 1
             var atlas_coordinates = Vector2(atlas_x, 0)
             tilemap.set_cell(0, coordinates, 2, atlas_coordinates, 0)
 
