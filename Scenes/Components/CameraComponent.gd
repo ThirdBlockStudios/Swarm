@@ -33,7 +33,7 @@ func _process(delta: float):
 func _input(event: InputEvent):
     if event.is_action_pressed("center_camera"):
         offset = Vector2(0, 0)
-        position = get_tree().get_first_node_in_group("player").position
+#        position = get_tree().get_first_node_in_group("player").position
     if event.is_action_released("zoom_in"):
         zoom_camera(-zoom_speed, event.position)
     if event.is_action_released("zoom_out"):

@@ -33,6 +33,7 @@ func _input(event: InputEvent):
         attack.attack_damage = 50
         $HealthComponent.damage(attack)
     if event.is_action_pressed("attack"):
+        $AnimatedSprite2D.stop()
         $AnimatedSprite2D.play("Attack")
         var attack = Attack.new()
         attack.attack_damage = 10

@@ -5,6 +5,7 @@ extends Node2D
 var health: float
 
 # Emitted when health reaches 0.
+signal health_decreased
 signal health_depleted
 
 
@@ -15,6 +16,7 @@ func _ready():
 
 func damage(attack: Attack):
     health -= attack.attack_damage
+    health_decreased.emit()
     on_health_changed()
     if health <= 0:
         health_depleted.emit()
