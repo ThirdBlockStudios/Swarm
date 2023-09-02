@@ -21,22 +21,22 @@ radius = 2000.1
 [sub_resource type="SpriteFrames" id="SpriteFrames_wfams"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.3,
 "texture": ExtResource("6_14ptl")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("7_3gt83")
 }, {
-"duration": 1.0,
+"duration": 1.3,
 "texture": ExtResource("8_vpkpp")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("9_hqg7m")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("10_nk26n")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("11_qxhk8")
 }],
 "loop": false,
@@ -55,7 +55,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 1.3,
 "texture": ExtResource("22_vhbag")
 }],
 "loop": false,
@@ -83,7 +83,7 @@ shape = SubResource("CircleShape2D_ohfpt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_wfams")
-animation = &"Static"
+animation = &"Attack"
 
 [node name="HealthComponent" parent="." instance=ExtResource("7_28yue")]
 
